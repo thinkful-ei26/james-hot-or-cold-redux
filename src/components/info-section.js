@@ -1,10 +1,16 @@
 import React from 'react';
 
 import './info-section.css';
+import { connect } from 'react-redux';
 
-export default function InfoSection(props) {
+export function InfoSection(props) {
+  
+  if (!props.show){
+    return (<div></div>);
+  } 
+  
   return (
-    <section id="what" tabIndex="-1">
+    <section  id="what" tabIndex="-1">
       <h2>What do I do?</h2>
       <p>This is a Hot or Cold Number Guessing Game. The game goes like this:</p>
       <ol>
@@ -16,3 +22,8 @@ export default function InfoSection(props) {
     </section>
   );
 }
+const mapStateToProps = (state) => ({
+  show: state.show
+});
+
+export default connect(mapStateToProps)(InfoSection);
