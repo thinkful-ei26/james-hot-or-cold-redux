@@ -4,41 +4,30 @@ import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
 import {connect} from 'react-redux';
-import { InputGuess, NewGame, Aural } from '../actions';
 
-
-import store from '../store';
+// import store from '../store';
 
 export class Game extends React.Component {
  
   render() {
-    const { feedback, guesses } = store.getState();
-    const guessCount = guesses.length;
+    // const { feedback, guesses } = store.getState();
+    // const guessCount = guesses.length;
 
 
     return (
       <div>
-        <Header
-          onRestartGame={() => store.dispatch(NewGame('NewGame'))}
-          onGenerateAuralUpdate={() => store.dispatch(Aural())}
-        />
+        <Header   />
         <main role="main">
-          <GuessSection
-            feedback={feedback}
-            guessCount={guessCount}
-            onMakeGuess={guess => store.dispatch(InputGuess(guess))}
-          />
-          <StatusSection guesses={guesses} 
-           
-          />
+          <GuessSection />
+          <StatusSection  />
           <InfoSection />
         </main>
       </div>
     );
   }
 }
-const mapStateToProps = (state, props) => ({
- auralStatus : state.auralStatus
-});
+// const mapStateToProps = (state, props) => ({
+//  auralStatus : state.auralStatus
+// });
 
-export default connect(mapStateToProps)(Game);
+export default connect()(Game);

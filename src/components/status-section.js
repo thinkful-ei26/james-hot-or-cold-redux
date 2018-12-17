@@ -6,21 +6,22 @@ import AuralStatus from './aural-status';
 import {connect} from 'react-redux';
 
 export function StatusSection(props) {
-  const { guesses, auralStatus } = props;
-  const guessCount = guesses.length;
+  // const { guesses, auralStatus, guessList } = props;
+  // const guessCount = guesses.length;
 
   return (
     <section aria-labelledby="guessCount" aria-describedby="guessList">
-      <GuessCount guessCount={guessCount} />
+      <GuessCount />
       <GuessList  />
-      <AuralStatus auralStatus={auralStatus} />
+      <AuralStatus />
     </section>
   );
 }
 
-const mapStateToProps = state => ({
-  guesses : state.guesses,
-  auralStatus : state.auralStatus
-});
+// const mapStateToProps = state => ({
+//   guesses : state.guesses,
+//   auralStatus : state.auralStatus,
+//   guessList : state.guessList
+// });
 
-export default connect(mapStateToProps)(StatusSection);
+export default connect()(StatusSection);
