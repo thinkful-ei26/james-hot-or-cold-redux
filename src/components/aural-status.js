@@ -13,7 +13,7 @@ export function AuralStatus(props) {
     </p>
   );
 }
-const mapStateToProps = state => ({
+const mapStateToProps = (state, props) => ({
   auralStatus : state.auralStatus
 });
 

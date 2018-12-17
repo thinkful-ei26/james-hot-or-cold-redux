@@ -10,3 +10,7 @@ export const NewGame = ()=>({
 export const Show = ()=>({
     type: 'Show'
 });
+
+export const Aural = ()=>({
+   type: 'Aural' 
+});
